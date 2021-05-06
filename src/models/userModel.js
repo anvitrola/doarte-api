@@ -2,10 +2,11 @@ class User {
 
   constructor(id, name, email, password) {
 
-          this.id = id,
-          this.name = name,
-          this.email = email,
-          this.password = password;
+    this._id = id,
+      this._name = name,
+      this._email = email,
+      this._password = password
+
   }
 
 }
