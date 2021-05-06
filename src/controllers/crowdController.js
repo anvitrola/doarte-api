@@ -2,6 +2,7 @@ const route = 'crowd';
 const CrowdDAO = require('../DAO/crowDao');
 const bd = require('../infra/crowdBD');
 const crowdDao = new CrowdDAO(bd);
+
 module.exports = (app) => { 
     app.get(`/${route}`,async (req, res) => {
         try {
