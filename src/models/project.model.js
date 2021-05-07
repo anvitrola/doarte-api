@@ -1,8 +1,9 @@
 module.exports = (sequelize, Sequelize) => {
     const Project = sequelize.define("Project", {
-        id: {
-            type: Sequelize.INTEGER
-        },
+        // id: {
+        //     type: Sequelize.INTEGER,
+        //     primaryKey: true
+        // },
         user_id: {
             type: Sequelize.INTEGER
         },
@@ -22,7 +23,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DATE(6)
         },
         description: {
-            type: TEXT
+            type: Sequelize.TEXT('large')
         }
     },
     {

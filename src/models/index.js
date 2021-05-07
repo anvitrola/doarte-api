@@ -1,4 +1,4 @@
-const config = require("../config/db.config.js");
+const config = require("../config/db.config");
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize(
@@ -37,3 +37,5 @@ db.Users.hasMany(db.Project, {
     through: "",
     foreignKey: ""
 });
+
+module.exports = db;
