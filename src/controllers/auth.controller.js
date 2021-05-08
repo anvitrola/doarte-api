@@ -12,7 +12,9 @@ exports.signUp = (req, res) => {
         name: name,
         password: bcrypt.hashSync(password, 8)
     })
-    .then(user => {})
+    .then(user => {
+        res.send("Usuário criado com sucesso!")
+    })
     .catch(err => res.status(500).send({message: err.message}))
 }
 

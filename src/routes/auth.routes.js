@@ -1,21 +1,20 @@
-const {verifySignUp} = require("../middleware/verifySignUp");
+const express = require("express");
+let router = express.Router();
+
+const verifySignUp = require("../middleware/verifySignUp");
 const controller = require("../controllers/auth.controller");
 
-module.exports = app => {
-    app.use((req, res, next) => {
-        res.header(
-            "Access-Control-Allow-Headers",
-            "x-access-token, Origin, Content-Type, Accept"
-        );
-        next();
-    });
 
-    app.post("/api/auth/signUp", 
-        [
-            verifySignUp
-        ],
-        controller.signUp
+router.use((_, res,next) => {
+    res.header(
+        "Access-Control-Allow-Headers",
+        "x-access-token, Origin, Content-Type, Accept"
     );
+    next();
+});
 
-    app.post("/api/auth/signIn", controller.signIn);
-}
+router.post("/api/auth/signUp", verifySignUp, controller.signUp);
+router.post("/api/auth/signIn", controller.signIn);
+
+
+module.exports = router;

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./models");
+const authRoutes = require("./routes/auth.routes");
 
 const app = express();
 const port = process.env.PORT || 2000;
@@ -8,6 +9,7 @@ const port = process.env.PORT || 2000;
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
+app.use(authRoutes);
 
 db.sequelize.sync({alter: true});
 
