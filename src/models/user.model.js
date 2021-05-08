@@ -1,7 +1,8 @@
 module.exports = (sequelize, Sequelize) => {
     const User = sequelize.define("Users", {
         id: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            primaryKey: true,
         },
         email: {
             type: Sequelize.STRING,
@@ -18,9 +19,9 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.FLOAT
         }
     },
-    {
-        freezeTableName: true
-    });
+        {
+            freezeTableName: true
+        });
 
     return User;
 }

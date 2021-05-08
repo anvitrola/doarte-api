@@ -1,7 +1,8 @@
 module.exports = (sequelize, Sequelize) => {
     const Project = sequelize.define("Project", {
         id: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            primaryKey: true
         },
         user_id: {
             type: Sequelize.INTEGER
@@ -12,7 +13,7 @@ module.exports = (sequelize, Sequelize) => {
         category: {
             type: Sequelize.STRING
         },
-        value: { //seriam 2 tipos de dados: goal_value e current_value? 
+        value: { //seriam 2 tipos de dados: goal_value e current_value?
             type: Sequelize.FLOAT
         },
         deadline: {
@@ -22,12 +23,12 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DATE(6)
         },
         description: {
-            type: TEXT
+            type: Sequelize.TEXT
         }
     },
-    {
-        freezeTableName: true
-    });
+        {
+            freezeTableName: true
+        });
 
     return Project;
 }
