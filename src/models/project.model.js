@@ -13,7 +13,10 @@ module.exports = (sequelize, Sequelize) => {
         category: {
             type: Sequelize.STRING
         },
-        value: { //seriam 2 tipos de dados: goal_value e current_value?
+        goal_value: { 
+            type: Sequelize.FLOAT
+        },
+        current_value: { 
             type: Sequelize.FLOAT
         },
         deadline: {
