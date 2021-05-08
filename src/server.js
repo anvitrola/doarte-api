@@ -11,12 +11,11 @@ app.use(cors());
 
 db.sequelize.sync({alter: true});
 
+
+// TODO configurar rotas
 // require("./routes/auth.routes.js")(app);
 // require("./routes/user.routes.js")(app);
-require("./routes/product.routes")(app);
 
 app.listen(port, (err) => {
     err ? console.log(err) : console.log(`[SUCCESS]: Server is running at http://localhost:${port}`);
 });
-
-
