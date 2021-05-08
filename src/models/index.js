@@ -19,15 +19,9 @@ db.sequelize = sequelize;
 db.Users = require("../models/user.model")(sequelize, Sequelize);
 db.Project = require("../models/project.model")(sequelize, Sequelize);
 
-db.Project.belongsTo(db.Users, {
-    through: "",
-    foreignKey: ""
-});
+db.Project.belongsTo(db.Users);
 
-db.Users.hasMany(db.Project, {
-    through: "",
-    foreignKey: ""
-});
+//db.Users.hasMany(db.Project, {foreignKey: ""});
 
 
 module.exports = db
