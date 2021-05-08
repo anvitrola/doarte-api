@@ -10,7 +10,8 @@ exports.signUp = (req, res) => {
     Users.create({
         email: email,
         name: name,
-        password: bcrypt.hashSync(password, 8)
+        password: bcrypt.hashSync(password, 8),
+        amount_money:1000
     })
     .then(user => {
         res.send("Usuário criado com sucesso!")
