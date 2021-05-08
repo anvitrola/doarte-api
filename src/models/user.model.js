@@ -1,9 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
     const User = sequelize.define("Users", {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-        },
         email: {
             type: Sequelize.STRING,
             allowNull: false
@@ -15,7 +11,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        amout_money: {
+        amount_money: {
             type: Sequelize.FLOAT
         }
     },
