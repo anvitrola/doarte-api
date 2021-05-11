@@ -12,5 +12,9 @@ module.exports = app => {
 
     app.get("/api/test/all", controller.allAccess);
 
-    app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard)
+    app.get("/api/test/user", authJwt, controller.userBoard);
+
+    app.patch("/api/test/user/update", authJwt, controller.updateUser);
+
+    app.delete("/api/test/user/delete", authJwt, controller.deleteUser);
 }
