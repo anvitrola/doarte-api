@@ -11,8 +11,6 @@ const checkDuplicateEmail = (req, res, next) => {
     .then(user => {
         user? res.status(400).send({message: "Usuário já cadastrado."}):next();
     })
-
-    
 }
 
 const verifySignUp = checkDuplicateEmail;

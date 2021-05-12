@@ -47,7 +47,6 @@ exports.signIn = (req, res) => {
             expiresIn: 43200 //12h
         });
 
-        //Aqui deve entrar tb a lista de projetos do usuário
         res.status(200).send({
             id: user.id,
             email: user.email,
