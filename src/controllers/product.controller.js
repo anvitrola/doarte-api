@@ -11,20 +11,21 @@ exports.create = (req, res) => {
       });
       return;
     }
-  
+    const user_id = res.locals.userID;
     // Create a product
-    const product = {
-      user_id: 1,
-      title: "example",
-      category: "example",
-      value: 1000,
-      deadline: "02/03/2001",
-      created_at: "04/04/2001",
-      description: "example"
-    };
+    const { title, category,
+           value, deadline, description} = req.body
   
     // Save product in the database
-    Product.create(product)
+    Product.create(
+  {
+    user_id:user_id,
+    title:title,
+    category:category,
+    value:value,
+    deadline:deadline,
+    description:description
+  })
       .then(data => {
         res.send(data);
       })
@@ -35,20 +36,82 @@ exports.create = (req, res) => {
         });
       });
   };
-
-exports.findAll = (req, res) => {
-  const title = req.query.title;
-  let condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
   
-  Product.findAll({ where: condition })
+  exports.findAll = (req, res) => {
+    const title = req.query.title;
+    let condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
+    
+    Product.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials."
+        err.message || "Houve um erro ao pegar as vaquinhas."
       });
     });
-};
+  };
   
+exports.updateProduct = (req, res) => {
+      // Validate request
+      //Need to do
+      // Take product update
+      const user_id = res.locals.userId;
+      const id = req.params.id
+      const {title, category,
+             value, deadline, description} = req.body
+    
+      // Save product in the database
+      Product.update(
+    {
+      title:title,
+      category:category,
+      value:value,
+      deadline:deadline,
+      description:description
+    },
+    {
+      where:{id:id,user_id:user_id}
+    })
+    .then(num => {
+      if (num == 1) {
+          res.send({
+              message: "Vakinha atualizada com sucesso"
+          });
+      } else {
+          res.send({
+              message: "Não foi possível atualizar a vakinha. Tente novamente"
+          });
+      }
+  })
+  .catch(err => {
+      res.status(500).send({
+          message: "Erro na atualização da vaquinha. Tente novamente"
+      });
+  });
+};
+exports.deleteProduct = async (req, res) => {
+  const user_id = res.locals.userId;
+  const id = req.params.id
+ 
+  await Product.destroy({
+    where: {id: id,user_id:user_id}
+  })
+  .then(num => {
+      if (num == 1) {
+          res.send({
+              message: "Vaquinha deletada com sucesso"
+          });
+      } else {
+          res.send({
+              message: "Não foi possível deletar a vakinha. Tente novamente"
+          });
+      }
+  })
+  .catch(err => {
+      res.status(500).send({
+          message: "Erro ao deletar a vakinha. Tente novamente"
+      });
+  });
+};

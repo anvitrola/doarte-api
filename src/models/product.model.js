@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const Project = sequelize.define("Project", {
+    const Product = sequelize.define("Product", {
         user_id: {
             type: Sequelize.INTEGER
         },
@@ -18,9 +18,6 @@ module.exports = (sequelize, Sequelize) => {
         deadline: {
             type: Sequelize.DATE(6)
         },
-        created_at: {
-            type: Sequelize.DATE(6)
-        },
         description: {
             type: Sequelize.TEXT
         }
@@ -29,5 +26,5 @@ module.exports = (sequelize, Sequelize) => {
             freezeTableName: true
         });
 
-    return Project;
+    return Product;
 }
