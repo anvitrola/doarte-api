@@ -2,8 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const db = require("./models");
 
-
-
 const app = express();
 const port = process.env.PORT || 2000;
 
@@ -15,9 +13,6 @@ require("./routes/user.routes")(app);
 require("./routes/auth.routes.js")(app);
 
 db.sequelize.sync({alter: true});
-
-
-// TODO configurar rotas
 
 app.listen(port, (err) => {
     err ? console.log(err) : console.log(`[SUCCESS]: Server is running at http://localhost:${port}`);
