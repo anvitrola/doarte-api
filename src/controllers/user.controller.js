@@ -1,9 +1,23 @@
 const db = require("../models");
 const bcrypt = require("bcryptjs");
 const Users = db.Users;
+const Op = db.Sequelize.Op;
+
 
 exports.allAccess = (req, res) => {
-    res.status(200).send({message: "Conteúdo público"}); //get genérico. retorna nome de um usuário qualquer e para todos os usuários
+    // const title = req.query.title;
+    // let condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
+    
+    Users.findAll()
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+        err.message || "Houve um erro ao pegar os usuários."
+      });
+    });
 }
 
 exports.userBoard = (req, res) => {
