@@ -17,11 +17,12 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.Users = require("../models/user.model")(sequelize, Sequelize);
-db.Project = require("../models/project.model")(sequelize, Sequelize);
+db.Product = require("../models/product.model")(sequelize, Sequelize);
 
-db.Project.belongsTo(db.Users);
+db.Product.belongsTo(db.Users,{foreignKey: 'user_id'});
+db.Users.hasMany(db.Product, {foreignKey: 'user_id'});
 
-//db.Users.hasMany(db.Project, {foreignKey: ""});
+
 
 
 module.exports = db
