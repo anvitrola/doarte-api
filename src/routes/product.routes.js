@@ -16,6 +16,6 @@ module.exports = app => {
   app.delete("/api/test/product/delete/:id",authJwt, products.deleteProduct);
 
   
-  
+
 };
   
