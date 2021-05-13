@@ -1,6 +1,8 @@
 const db = require("../models");
 const bcrypt = require("bcryptjs");
 const Users = db.Users;
+const Product = db.Product;
+
 const Op = db.Sequelize.Op;
 
 
@@ -8,7 +10,7 @@ exports.allAccess = (req, res) => {
     // const title = req.query.title;
     // let condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
     
-    Users.findAll()
+    Users.findAll({attributes:['name','email','amount_money']})
     .then(data => {
       res.send(data);
     })
