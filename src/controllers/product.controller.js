@@ -1,6 +1,6 @@
 const db = require("../models");
-
 const Product = db.Product;
+const Users = db.Users;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
@@ -38,11 +38,22 @@ exports.create = (req, res) => {
       });
   };
   
-  exports.findAll = (req, res) => {
-    const title = req.query.title;
-    let condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
-    
-    Product.findAll({ where: condition })
+exports.findAll = (req, res) => {
+    // const title = req.query.title;
+    // let condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
+    //Return all products. also include name of owner
+    Product.findAll(
+      {
+        attributes:
+        [
+          'title', 'category',
+         'goal_value','current_value', 'deadline', 'description'
+        ],
+        include:
+        {
+          model:db.Users,attributes:[['name','owner']]
+        }
+      })
     .then(data => {
       res.send(data);
     })
@@ -53,7 +64,21 @@ exports.create = (req, res) => {
       });
     });
   };
-  
+exports.findUsersProducts =  (req, res) => {
+  const user_id = res.locals.userId;
+  //Return all products that belong to the user.
+  Product.findAll({attributes:['title', 'category',
+  'goal_value','current_value', 'deadline', 'description'], where: {user_id:user_id} })
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+      message:
+      err.message || "Houve um erro ao pegar as vaquinhas."
+    });
+  });
+};
 exports.updateProduct = (req, res) => {
       // Validate request
       //Need to do
@@ -61,14 +86,14 @@ exports.updateProduct = (req, res) => {
       const user_id = res.locals.userId;
       const id = req.params.id
       const {title, category,
-             value, deadline, description} = req.body
+             goal_value, deadline, description} = req.body
     
       // Save product in the database
       Product.update(
     {
       title:title,
       category:category,
-      value:value,
+      goal_value:goal_value,
       deadline:deadline,
       description:description
     },
