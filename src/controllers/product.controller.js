@@ -1,6 +1,6 @@
 const db = require("../models");
 
-const Product = db.product;
+const Product = db.Product;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
@@ -11,10 +11,10 @@ exports.create = (req, res) => {
       });
       return;
     }
-    const user_id = res.locals.userID;
+    const user_id = res.locals.userId;
     // Create a product
     const { title, category,
-           value, deadline, description} = req.body
+           goal_value, deadline, description} = req.body
   
     // Save product in the database
     Product.create(
@@ -22,7 +22,8 @@ exports.create = (req, res) => {
     user_id:user_id,
     title:title,
     category:category,
-    value:value,
+    goal_value:goal_value,
+    current_value:0,
     deadline:deadline,
     description:description
   })
@@ -77,11 +78,11 @@ exports.updateProduct = (req, res) => {
     .then(num => {
       if (num == 1) {
           res.send({
-              message: "Vakinha atualizada com sucesso"
+              message: "Vaquinha atualizada com sucesso"
           });
       } else {
           res.send({
-              message: "Não foi possível atualizar a vakinha. Tente novamente"
+              message: "Não foi possível atualizar a vaquinha. Tente novamente"
           });
       }
   })
@@ -105,13 +106,13 @@ exports.deleteProduct = async (req, res) => {
           });
       } else {
           res.send({
-              message: "Não foi possível deletar a vakinha. Tente novamente"
+              message: "Não foi possível deletar a vaquinha. Tente novamente"
           });
       }
   })
   .catch(err => {
       res.status(500).send({
-          message: "Erro ao deletar a vakinha. Tente novamente"
+          message: "Erro ao deletar a vaquinha. Tente novamente"
       });
   });
 };
