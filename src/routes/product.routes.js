@@ -11,6 +11,8 @@ module.exports = app => {
     // Retrieve all products
   app.get("/api/test/product/findAll", products.findAll);
 
+  app.get("/api/test/product/findUsersProduct/",authJwt, products.findUsersProducts);
+
   app.patch("/api/test/product/update/:id",authJwt, products.updateProduct);
   
   app.delete("/api/test/product/delete/:id",authJwt, products.deleteProduct);
