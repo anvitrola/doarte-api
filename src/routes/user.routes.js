@@ -10,11 +10,19 @@ module.exports = app => {
         next();
     });
 
+    //Return users list with name and email of all users 
+    //Retorna a lista de usuários com nome e email
     app.get("/api/test/all", controller.allAccess);
 
+    //Return user data after verify || Retorna os dados do usuário depois de autenticar
     app.get("/api/test/user", authJwt, controller.userBoard);
 
+    //Update user || Atualiza usuário
     app.patch("/api/test/user/update", authJwt, controller.updateUser);
 
-    app.delete("/api/test/user/delete", authJwt, controller.deleteUser);
+    //Deleter user || Deleta o usuário
+    app.patch("/api/test/user/delete", authJwt, controller.deleteUser);
+
+    //Make donations || Fazer doações
+    app.post("/api/test/user/donation/:id",authJwt,controller.donation);
 }
