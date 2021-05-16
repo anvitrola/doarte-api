@@ -16,11 +16,11 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Users = require("../models/user.model")(sequelize, Sequelize);
-db.Product = require("../models/product.model")(sequelize, Sequelize);
+db.User = require("../models/user.model")(sequelize, Sequelize);
+db.Fundraiser = require("./fundraiser.model")(sequelize, Sequelize);
 
-db.Product.belongsTo(db.Users,{foreignKey: 'user_id'});
-db.Users.hasMany(db.Product, {foreignKey: 'user_id'});
+db.Fundraiser.belongsTo(db.User,{foreignKey: 'user_id'});
+db.User.hasMany(db.Fundraiser, {foreignKey: 'user_id'});
 
 
 

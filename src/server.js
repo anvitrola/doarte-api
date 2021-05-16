@@ -11,7 +11,7 @@ app.use(cors());
 
 require("./routes/user.routes")(app);
 require("./routes/auth.routes.js")(app);
-require("./routes/product.routes.js")(app);
+require("./routes/fundraiser.routes.js")(app);
 
 db.sequelize.sync({alter: true});
 
