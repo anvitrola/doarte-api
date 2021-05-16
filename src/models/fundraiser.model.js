@@ -20,6 +20,12 @@ module.exports = (sequelize, Sequelize) => {
         },
         description: {
             type: Sequelize.TEXT
+        },
+        status:{
+            type:Sequelize.BOOLEAN
+        },
+        active:{
+            type: Sequelize.BOOLEAN
         }
     },
         {

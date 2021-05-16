@@ -1,14 +1,26 @@
+const { sequelize } = require("../models");
 const db = require("../models");
 
 const Fundraiser = db.Fundraiser;
 
+
 const Op = db.Sequelize.Op;
 
-exports.createFundraiser = (req, res) => {
+exports.createFundraiser = async (req, res) => {
   const user_id = req.userId;
   const { title, category, goal_value, deadline, description } = req.body;
 
   //fazer contagem de quantas vaquinhas esse usuário já tem e retornar erro caso essa seja a 21º
+  await Fundraiser.findAll({
+    where: {user_id:user_id}
+  }).then(data => {
+    if(data.length >= 3){
+      res.status(404).send({
+        message: "Você atingiu o limite de criação de vaquinhas"
+      })
+    }
+    return;
+  })
 
   if (!req.body) {
     res.status(400).send({
@@ -26,6 +38,8 @@ exports.createFundraiser = (req, res) => {
     current_value: 0,
     deadline: deadline,
     description: description,
+    status:true,
+    active: true,
   })
     .then((data) => res.send(data))
     .catch((err) => {
@@ -36,20 +50,23 @@ exports.createFundraiser = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  Fundraiser.findAll({
-    attributes: [
-      "title",
-      "category",
-      "goal_value",
-      "current_value",
-      "deadline",
-      "description",
-    ],
-    include: {
-      model: db.User,
-      attributes: [["name", "owner"]],
+  Fundraiser.findAll(
+    {
+      attributes: [
+        "title",
+        "category",
+        "goal_value",
+        "current_value",
+        "deadline",
+        "description",
+      ],
+      include: {
+        model: db.User,
+        attributes: [["name", "owner"]],
+      },
+      where: { active: true }
     },
-  })
+  )
     .then((data) => res.send(data))
     .catch((err) => {
       res.status(500).send({
@@ -70,7 +87,7 @@ exports.findUsersFundraisers = (req, res) => {
       "deadline",
       "description",
     ],
-    where: { user_id: user_id },
+    where: { user_id: user_id, active: true },
   })
     .then((data) => res.send(data))
     .catch((err) => {
@@ -123,12 +140,20 @@ exports.deleteFundraiser = async (req, res) => {
   const user_id = req.userId;
   const fundraiser_id = req.params.id;
 
-  await Fundraiser.destroy({
-    where: {
-      id: fundraiser_id,
-      user_id: user_id,
+  await Fundraiser.update(
+    {
+      title: "deleted",
+      category: "deleted",
+      description: "deleted",
+      active: false,
     },
-  })
+    {
+      where: {
+        id: fundraiser_id,
+        user_id: user_id,
+      },
+    }
+  )
     .then((num) => {
       if (num == 1) {
         res.send({
@@ -145,4 +170,32 @@ exports.deleteFundraiser = async (req, res) => {
         message: "Erro ao deletar a vaquinha. Tente novamente.",
       });
     });
+};
+exports.deleteUserFundraisers = async (user_id) => {
+  await Fundraiser.findAll({
+    attributes: ["id"],
+    where: { user_id: user_id, active: true },
+  }).then((data) => {
+    if(data){
+      Fundraiser.update(
+        {
+          title: "deleted",
+          category: "deleted",
+          description: "deleted",
+          active: false,
+        },
+        {
+          where: {
+            user_id: user_id,
+          },
+        }
+      )
+    }
+  })
+  .catch((err) => {
+    res.status(500).send({
+      message: "Erro ao deletar as vaquinhas do usuário deletado."
+    });
+    return;
+  });;
 };
