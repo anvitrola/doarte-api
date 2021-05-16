@@ -2,6 +2,7 @@ const db = require("../models");
 const bcrypt = require("bcryptjs");
 const Sequelize = require("sequelize");
 const { sequelize } = require("../models");
+const { deleteUserFundraisers } = require("./fundraiser.controller");
 const User = db.User;
 const Fundraiser = db.Fundraiser;
 
@@ -68,6 +69,8 @@ exports.updateUser = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
   const id = req.userId;
+
+  await deleteUserFundraisers(id);
 
   await User.update(
     {
@@ -153,10 +156,40 @@ exports.donation = async (req, res) => {
       }
     );
     //Aqui entraria o update da vaquinha com o novo valor e novas checagens: essa vaquinha, c essa transação, atinge seu objetivo?
-      await Fundraiser.update(
-      {
+    const data_2 = await sequelize.transaction(async () => {
+      try {
+        const request = await Fundraiser.findOne(
+          {
+            attributes: ["goal_value", "current_value"],
+            where: { id: fundraiser_id }
+          },
+          
+        );
+        return(request);
+      } catch (e) {
+        res.send(e);
+      }
+    });
+    const {dataValues:{goal_value,current_value}} = data_2  
+
+    let updatedFundraiser = "";
+    let message = "";
+    if((current_value+donation_value) >= goal_value){
+      updatedFundraiser = {
         current_value: Sequelize.literal(`current_value + ${donation_value}`),
-      },
+        status:false
+      }
+      message = "A meta da vaquinha foi batida!";
+    }
+    else{
+      updatedFundraiser = {
+        current_value: Sequelize.literal(`current_value + ${donation_value}`),
+      }
+      message = "Doação realizada com sucesso.";
+    }
+      
+      await Fundraiser.update(
+      updatedFundraiser,
       {
         where: {
           id: fundraiser_id,
@@ -166,7 +199,7 @@ exports.donation = async (req, res) => {
       .then((num) => {
         if (num == 1) {
           res.send({
-            message: "Doação realizada com sucesso.",
+            message: message,
           });
         } else {
           res.send({
@@ -180,11 +213,4 @@ exports.donation = async (req, res) => {
         });
       });
 
-  //   // .catch(err => {
-  //   //     res.status(500).send(
-  //   //         {
-  //   //             message: err.message || "Erro no processamento da doação."
-  //   //         }
-  //   //     );
-  //   // });
 };
