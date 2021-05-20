@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const Product = sequelize.define("Product", {
+    const Fundraiser = sequelize.define("Fundraiser", {
         user_id: {
             type: Sequelize.INTEGER
         },
@@ -20,11 +20,17 @@ module.exports = (sequelize, Sequelize) => {
         },
         description: {
             type: Sequelize.TEXT
+        },
+        status:{
+            type:Sequelize.BOOLEAN
+        },
+        active:{
+            type: Sequelize.BOOLEAN
         }
     },
         {
             freezeTableName: true
         });
 
-    return Product;
+    return Fundraiser;
 }
