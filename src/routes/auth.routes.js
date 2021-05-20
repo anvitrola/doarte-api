@@ -11,6 +11,6 @@ module.exports = app => {
         next();
     });
         
-    app.post("/api/auth/signUp", verifySignUp, controller.signUp);
-    app.post("/api/auth/signIn", controller.signIn)
+    app.post("/auth/signUp", verifySignUp, controller.signUp);
+    app.post("/auth/signIn", controller.signIn)
 };

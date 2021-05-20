@@ -12,17 +12,17 @@ module.exports = app => {
 
     //Return users list with name and email of all users 
     //Retorna a lista de usuários com nome e email
-    app.get("/api/test/all", controller.allAccess);
+    app.get("/all", controller.allAccess);
 
     //Return user data after verify || Retorna os dados do usuário depois de autenticar
-    app.get("/api/test/user", authJwt, controller.userBoard);
+    app.get("/user", authJwt, controller.userBoard);
 
     //Update user || Atualiza usuário
-    app.patch("/api/test/user/update", authJwt, controller.updateUser);
+    app.patch("/user/update", authJwt, controller.updateUser);
 
     //Deleter user || Deleta o usuário
-    app.patch("/api/test/user/delete", authJwt, controller.deleteUser);
+    app.patch("/user/delete", authJwt, controller.deleteUser);
 
     //Make donations || Fazer doações
-    app.post("/api/test/user/donation/:id",authJwt,controller.donation);
+    app.post("/user/donation/:id",authJwt,controller.donation);
 }
