@@ -12,7 +12,6 @@ module.exports = app => {
 
     //Return users list with name and email of all users 
     //Retorna a lista de usuários com nome e email
-    app.get("/", res.send({ok}));
 
     app.get("/all", controller.allAccess);
 
