@@ -4,7 +4,13 @@ module.exports = {
   password: "0a5953cd501b8c6c9e4d7b63da21dbdbd7a5cc33a1985aabde18b746281c86d6",
   host: "ec2-54-224-194-214.compute-1.amazonaws.com",
   dialect: "postgres",
-  ssl:"true",
+  ssl:true,
+  dialectOptions: {
+    ssl: {
+      require: true, // This will help you. But you will see nwe error
+      rejectUnauthorized: false // This line will fix new error
+    }
+  },
   pool: {
     max: 5,
     min: 0,
