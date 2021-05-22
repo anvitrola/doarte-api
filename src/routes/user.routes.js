@@ -12,6 +12,7 @@ module.exports = app => {
 
     //Return users list with name and email of all users 
     //Retorna a lista de usuários com nome e email
+
     app.get("/all", controller.allAccess);
 
     //Return user data after verify || Retorna os dados do usuário depois de autenticar
