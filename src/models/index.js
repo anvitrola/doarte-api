@@ -1,35 +1,29 @@
 const config = require("../config/db.config");
 const Sequelize = require("sequelize");
 
-// const sequelize = new Sequelize(process.env.DATABASE_URL,
-//   {
-//     dialect: "postgres",
-//     ssl:true,
-//     dialectOptions: {
-//         ssl: {
-//             rejectUnauthorized: false 
-//         }
-//     },
-//   }
-//   // config.database,
-//   // config.user,
-//   // config.password,
-//   // {
-//   //     host: config.host,
-//   //     dialect: config.dialect
-//   // }
-// );
-const sequelize = new Sequelize(`${process.env.DATABASE_URI}?sslmode=require`, {
-    url: process.env.DATABASE_URL,
-    dialect: 'postgres',
-    logging: false,
+const sequelize = new Sequelize(process.env.DATABASE_URL,
+  {
+    dialect: "postgres",
     ssl:true,
     dialectOptions: {
-      ssl: {
-        rejectUnauthorized: false, // very important
-      }
-    }
-});
+        ssl: {
+            rejectUnauthorized: false 
+        }
+    },
+  }
+
+);
+// const sequelize = new Sequelize(`${process.env.DATABASE_URI}?sslmode=require`, {
+//     url: process.env.DATABASE_URL,
+//     dialect: 'postgres',
+//     logging: false,
+//     ssl:true,
+//     dialectOptions: {
+//       ssl: {
+//         rejectUnauthorized: false, // very important
+//       }
+//     }
+// });
 
 const db = {};
 
