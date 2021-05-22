@@ -1,4 +1,3 @@
-const config = require("../config/db.config");
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize(process.env.DATABASE_URL,
