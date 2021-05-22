@@ -57,6 +57,7 @@ exports.findAll = (req, res) => {
         "category",
         "goal_value",
         "current_value",
+        "createdAt",
         "deadline",
         "description",
       ],
