@@ -13,17 +13,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL,
   }
 
 );
-// const sequelize = new Sequelize(`${process.env.DATABASE_URI}?sslmode=require`, {
-//     url: process.env.DATABASE_URL,
-//     dialect: 'postgres',
-//     logging: false,
-//     ssl:true,
-//     dialectOptions: {
-//       ssl: {
-//         rejectUnauthorized: false, // very important
-//       }
-//     }
-// });
+
 
 const db = {};
 
