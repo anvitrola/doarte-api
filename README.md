@@ -30,9 +30,12 @@ This project was developed with the following technologies:
 - [Docker](https://jestjs.io/)
 - [Postgress](https://www.beekeeperstudio.io/)
 
-## 🔶 BPMN
+<br>
 
-<img src=".github/BPMN.png" alt="Aplication BPMN" width="500" />
+## 🔶 Diagram
+
+<img src=".github/diagram.png" alt="Aplication Diagram" width="500" />
+
 <br>
 
 # Requeriments
