@@ -2,7 +2,7 @@
       <h1></h1>
     <img src="/.github/logo-api.png" width="400"/>  
     <h1></h1>
-    <p>Doarte API</p>    
+    <h3>Doarte API</h3>    
     <hr />    
     <p>        <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/language-Node.js-greeb" alt="Repo Main Language" /></a>
                <a href="https://nlw4moveit-p6fhlbbtu-brunosampaiodev.vercel.app/">
