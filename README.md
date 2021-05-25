@@ -35,7 +35,7 @@ This project was developed with the following technologies:
 ## 🔶 Diagram
 <div align="center">
 
-<img src=".github/diagram.png" alt="Aplication Diagram" width="500" />
+<img src=".github/diagram.png" alt="Aplication Diagram" width="800" />
 </div>
 
 <br>
