@@ -32,7 +32,7 @@ This project was developed with the following technologies:
 
 ## 🔶 BPMN
 
-<img src=".github/BPMN.png" alt="Aplication BPMN" width="500" />
+<img src=".github/BPMN.png" alt="Aplication BPMN" width="500" height:"500" />
 <br>
 
 # Requeriments
