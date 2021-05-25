@@ -33,8 +33,10 @@ This project was developed with the following technologies:
 <br>
 
 ## 🔶 Diagram
+<div align="center">
 
 <img src=".github/diagram.png" alt="Aplication Diagram" width="500" />
+</div>
 
 <br>
 
