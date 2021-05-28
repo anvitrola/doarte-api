@@ -86,6 +86,6 @@ The application can be accessed at [`localhost:3333`](http://localhost:3333).
 <div align="center">
   <h1>Open Source</h1>
   <sub>Copyright © 2021</sub>
-  <p>DOARTE API<a href="https://github.com/anvitrola/doarte-app/blob/responsiveness/LICENSE"> is MIT licensed</a></p>
+  <p>Doarte API<a href="https://github.com/anvitrola/doarte-app/blob/responsiveness/LICENSE"> is MIT licensed</a></p>
   <img src="/.github/circule-logo.png" width="50" />
 </div>
