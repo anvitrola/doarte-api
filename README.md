@@ -103,12 +103,12 @@ $ npm start
 ### Autenticação
 
 #### 🚧 /auth/signUp
-Rota para cadastrar um usuário.
+Rota para cadastrar um usuário.<br>
 Verbo:POST.<br>
 Precisa estar logado:Não.<br>
 
 #### 🚧 /auth/signIn
-Rota para autenticar e logar um usuário.
+Rota para autenticar e logar um usuário.<br>
 Verbo:POST.<br>
 Precisa estar logado:Não.<br>
 
@@ -117,27 +117,27 @@ Precisa estar logado:Não.<br>
 ### Usuário
 
 #### 🚧 /all
-Rota para verificar a lista de usuários.
+Rota para verificar a lista de usuários.<br>
 Verbo:GET.<br>
 Precisa estar logado:Não.<br>
 
 #### 🚧 /user
-Rota para retornar informações do usuário.
+Rota para retornar informações do usuário.<br>
 Verbo:GET.<br>
 Precisa estar logado:Sim.<br>
 
 #### 🚧 /user/update
-Rota para atualizar as informações do usuário.
+Rota para atualizar as informações do usuário.<br>
 Verbo:PATCH.<br>
 Precisa estar logado:Sim.<br>
 
 #### 🚧 /user/delete
-Rota para deletar o usuário.
+Rota para deletar o usuário.<br>
 Verbo:PATCH.<br>
 Precisa estar logado:Sim.<br>
 
 #### 🚧 /user/donation/:id
-Rota para realizar uma doação á uma vaquinha.
+Rota para realizar uma doação á uma vaquinha.<br>
 Verbo:POST.<br>
 Precisa estar logado:Sim.<br>
 Passar o id da vaquinha como parâmetro.
@@ -146,31 +146,31 @@ Passar o id da vaquinha como parâmetro.
 ### Vaquinhas
 
 #### 🚧 /fundraiser/create
-Rota para criar uma vaquinha.
+Rota para criar uma vaquinha.<br>
 Verbo:GET.<br>
 Precisa estar logado:Sim.<br>
 
 #### 🚧 /fundraiser/findAll
-Rota para retorna todas as vaquinhas ativas do site.
+Rota para retorna todas as vaquinhas ativas do site.<br>
 Verbo:GET.<br>
 Precisa estar logado:Não.<br>
 
 #### 🚧 /fundraiser/findUserFundraisers/
-Rota para retornar as vaquinhas do usuário.
+Rota para retornar as vaquinhas do usuário.<br>
 Verbo:PATCH.<br>
 Precisa estar logado:Sim.<br>
 
 #### 🚧 /fundraiser/update/:id
-Rota para deletar o usuário (precisa estar logado).
-Verbo:PATCH.
+Rota para deletar o usuário (precisa estar logado).<br>
+Verbo:PATCH.<br>
 Precisa estar logado:Sim.<br>
 Passar o id da vaquinha como parâmetro.<br>
 
 #### 🚧 /fundraiser/delete/:id
-Rota para deletar uma vaquinha.
+Rota para deletar uma vaquinha.<br>
 Verbo:POST.<br>
 Precisa estar logado:Sim.<br>
-Passar o id da vaquinha como parâmetro.
+Passar o id da vaquinha como parâmetro.<br>
 
 
 
