@@ -180,10 +180,8 @@ Passar o id da vaquinha como parâmetro.
 ## Desenvolvedores responsáveis 👩🏻👨🏻👨🏻👨🏻⚜
 
 
-<table>
-      
-  <tr>
-        
+<table>      
+  <tr>    
     <td align="center">
       <a href="https://github.com/anvitrola">
         <img src="https://avatars.githubusercontent.com/u/62806299" width="100px;" alt="Foto de perfil do Github"/><br>
@@ -192,7 +190,6 @@ Passar o id da vaquinha como parâmetro.
         </sub>
       </a>
     </td>    
-
     <td align="center">
       <a href="https://github.com/RafaelVi">
         <img src="https://avatars3.githubusercontent.com/u/43658933" width="100px;" alt="Foto de perfil do Github"/><br>
@@ -200,8 +197,7 @@ Passar o id da vaquinha como parâmetro.
           <b>Rafael Almeida</b>
         </sub>
       </a>
-    </td>    
-
+    </td> 
     <td align="center">
       <a href="https://github.com/EliveltonSouzaDev">
         <img src="https://avatars.githubusercontent.com/u/67668057" width="100px;" alt="Foto de perfil do Github"/><br>
@@ -209,8 +205,7 @@ Passar o id da vaquinha como parâmetro.
           <b>Elivelton Souza</b>
         </sub>
       </a>
-    </td>    
-        
+    </td>         
     <td align="center">
       <a href="https://github.com/petersilvahs">
         <img src="https://avatars.githubusercontent.com/u/75394512" width="100px;" alt="Foto de perfil do Github"/><br>
@@ -218,10 +213,8 @@ Passar o id da vaquinha como parâmetro.
           <b>Peter Silva</b>
         </sub>
       </a>
-    </td>
-        
-  </tr>
-      
+    </td>      
+  </tr>     
 </table>
 
 
