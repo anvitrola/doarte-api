@@ -180,7 +180,9 @@ Passar o id da vaquinha como parâmetro.
 ## Desenvolvedores responsáveis 👩🏻👨🏻👨🏻👨🏻⚜
 
 <table>
+      
   <tr>
+        
     <td align="center">
       <a href="https://github.com/anvitrola">
         <img src="https://avatars.githubusercontent.com/u/62806299" width="100px;" alt="Foto de perfil do Github"/><br>
@@ -215,8 +217,10 @@ Passar o id da vaquinha como parâmetro.
           <b>Peter Silva</b>
         </sub>
       </a>
-    </td>    
+    </td>
+        
   </tr>
+      
 </table>
 
 
