@@ -179,6 +179,7 @@ Passar o id da vaquinha como parâmetro.
 
 ## Desenvolvedores responsáveis 👩🏻👨🏻👨🏻👨🏻⚜
 
+
 <table>
       
   <tr>
@@ -224,12 +225,12 @@ Passar o id da vaquinha como parâmetro.
 </table>
 
 
+
+
+
+
+
 ---
-
-
-
-<br>
-
 <div align="center">
   <h1>Open Source</h1>
     <h3>Contruibuições são bem-vindas, desde que aberto um pull request e requisitado um review dos membros da equipe.</h3>
