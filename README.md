@@ -106,11 +106,26 @@ $ npm start
 Rota para cadastrar um usuário.<br>
 Verbo:POST.<br>
 Precisa estar logado:Não.<br>
+Template para enviar os dados:<br>
+```
+{
+   "name":"insira o nome aqui",
+   "email":"insira o email aqui",
+   "password":"insira a senha aqui",
+}
+```
 
 #### 🚧 /auth/signIn
 Rota para autenticar e logar um usuário.<br>
 Verbo:POST.<br>
 Precisa estar logado:Não.<br>
+Template para enviar os dados:<br>
+```
+{
+   "email":"insira o email aqui",
+   "password":"insira a senha aqui",
+}
+```
 
 #### ⚠️ Rotas que precisam que você esteja logado necessitam do header 'x-access-token' com o valor do seu token (recebido após o login ser bem sucedido). 
 
@@ -130,6 +145,15 @@ Precisa estar logado:Sim.<br>
 Rota para atualizar as informações do usuário.<br>
 Verbo:PATCH.<br>
 Precisa estar logado:Sim.<br>
+Template para enviar os dados:<br>
+```
+{
+   "name":"insira o nome aqui",
+   "email":"insira o email aqui",
+   "password":"insira a senha aqui",
+   //você pode alterar apenas um, apenas delete os outros campos e envie apenas os campos desejados.
+}
+```
 
 #### 🚧 /user/delete
 Rota para deletar o usuário.<br>
@@ -140,15 +164,30 @@ Precisa estar logado:Sim.<br>
 Rota para realizar uma doação á uma vaquinha.<br>
 Verbo:POST.<br>
 Precisa estar logado:Sim.<br>
-Passar o id da vaquinha como parâmetro.
+Passar o id da vaquinha como parâmetro.<br>
+Template para enviar os dados:<br>
+```
+{
+   "donation_value": 25 //Insira o valor aqui (minimo 25)
+}
+```
 
 
 ### Vaquinhas
 
 #### 🚧 /fundraiser/create
 Rota para criar uma vaquinha.<br>
-Verbo:GET.<br>
+Verbo:POST.<br>
 Precisa estar logado:Sim.<br>
+Template para enviar os dados:<br>
+```
+{
+   title: "Insira o titulo aqui", 
+   goal_value: 500 //meta , 
+   deadline:"06-12-2021T00:00:00" //formato de data: DD-MM-YYYY , 
+   description: "Insira a descrição aqui"
+}
+```
 
 #### 🚧 /fundraiser/findAll
 Rota para retorna todas as vaquinhas ativas do site.<br>
@@ -157,7 +196,7 @@ Precisa estar logado:Não.<br>
 
 #### 🚧 /fundraiser/findUserFundraisers/
 Rota para retornar as vaquinhas do usuário.<br>
-Verbo:PATCH.<br>
+Verbo:GET.<br>
 Precisa estar logado:Sim.<br>
 
 #### 🚧 /fundraiser/update/:id
@@ -165,10 +204,19 @@ Rota para deletar o usuário (precisa estar logado).<br>
 Verbo:PATCH.<br>
 Precisa estar logado:Sim.<br>
 Passar o id da vaquinha como parâmetro.<br>
+Template para enviar os dados:<br>
+```
+{
+   title: "Insira o titulo aqui", 
+   goal_value: 500 //meta , 
+   description: "Insira a descrição aqui"
+   //você pode alterar apenas um, apenas delete os outros campos e envie apenas os campos desejados.
+}
+```
 
 #### 🚧 /fundraiser/delete/:id
 Rota para deletar uma vaquinha.<br>
-Verbo:POST.<br>
+Verbo:PATCH.<br>
 Precisa estar logado:Sim.<br>
 Passar o id da vaquinha como parâmetro.<br>
 
