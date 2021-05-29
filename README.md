@@ -24,15 +24,12 @@
 <p>Nossa api possui a arquitetura REST e atualmente pode realizar as operações CRUD de usuários e vaquinhas (ou outro produto).</a>.
     Para visualizar o projeto há duas opções:
     <ul>
-    <li>Copie esse link: <p>https://doarte-api.herokuapp.com/</p> e interaja com nossa API através de uma aplicação front-end ou programas como Postman ou Insomnia. 🔗 (versão instável)</li>
+    <li>Copie esse link: <a>https://doarte-api.herokuapp.com/</a> e interaja com nossa API através de uma aplicação front-end ou programas como Postman ou Insomnia.</li>
     <li>Para rodá-la localmente em sua máquina leia atentamente o fim desse arquivo 😉.</li>
    <ul>
 </p>
         </br>
         
-<div align="center">
-    <img src="/.github/page01.png/" width="700" /> 
-</div>
 
 ## 🌙 Possibilidades de um usuário médio na aplicação
 
@@ -80,7 +77,7 @@ O projeto foi desenvolvido utlizando as seguintes tecnologias:
 $ git clone <https://github.com/anvitrola/doarte-api>
 
 #### 2️⃣ Acesse a pasta do projeto no terminal/cmd
-$ cd doarte-app
+$ cd doarte-api
 
 #### 3️⃣ Abra o editor de texto (VSCode)
 $ code .
@@ -102,8 +99,6 @@ $ npm start
 
 ## 🛣️ Rotas da nossa API:
 
-### ⚠️ Rotas que precisam que você esteja logado necessitam do header 'x-access-token' 
-### com o valor do seu token (recebido após o login ser bem sucedido). 
 
 ### Autenticação
 
@@ -116,6 +111,8 @@ Precisa estar logado:Não.
 Rota para autenticar e logar um usuário.
 Verbo:POST.
 Precisa estar logado:Não.
+
+#### ⚠️ Rotas que precisam que você esteja logado necessitam do header 'x-access-token' com o valor do seu token (recebido após o login ser bem sucedido). 
 
 ### Usuário
 
@@ -182,7 +179,7 @@ Passar o id da vaquinha como parâmetro.
 
 ## Desenvolvedores responsáveis 👩🏻👨🏻👨🏻👨🏻⚜
 
-- <table>
+<table>
   <tr>
     <td align="center">
       <a href="https://github.com/anvitrola">
@@ -193,9 +190,7 @@ Passar o id da vaquinha como parâmetro.
       </a>
     </td>    
   </tr>
-</table>
 
-<table>
   <tr>
     <td align="center">
       <a href="https://github.com/RafaelVi">
@@ -206,9 +201,7 @@ Passar o id da vaquinha como parâmetro.
       </a>
     </td>    
   </tr>
-</table>
 
-<table>
   <tr>
     <td align="center">
       <a href="https://github.com/EliveltonSouzaDev">
@@ -219,9 +212,9 @@ Passar o id da vaquinha como parâmetro.
       </a>
     </td>    
   </tr>
-</table>
 
-<table>
+
+
   <tr>
     <td align="center">
       <a href="https://github.com/petersilvahs">
@@ -234,7 +227,6 @@ Passar o id da vaquinha como parâmetro.
   </tr>
 </table>
 
-- [Peter Silva]()
 
 ---
 
@@ -246,7 +238,7 @@ Passar o id da vaquinha como parâmetro.
   <h1>Open Source</h1>
     <h3>Contruibuições são bem-vindas, desde que aberto um pull request e requisitado um review dos membros da equipe.</h3>
   <sub>Copyright © 2021</sub>
-  <p>DOARTE <a href="https://github.com/anvitrola/doarte-app/blob/responsiveness/LICENSE">is MIT licensed 💖</a></p>
+  <p>DOARTE <a href="https://github.com/anvitrola/doarte-api/blob/responsiveness/LICENSE">is MIT licensed 💖</a></p>
   <img src="/.github/circule-logo.png" width="50" />
 </div>
 
