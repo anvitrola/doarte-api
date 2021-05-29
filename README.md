@@ -182,10 +182,10 @@ Precisa estar logado:Sim.<br>
 Template para enviar os dados:<br>
 ```
 {
-   title: "Insira o titulo aqui", 
-   goal_value: 500 //meta , 
-   deadline:"06-12-2021T00:00:00" //formato de data: DD-MM-YYYY , 
-   description: "Insira a descrição aqui"
+   "title": "Insira o titulo aqui", 
+   "goal_value": 500 //meta da vaquinha, 
+   "deadline":"06-12-2021T00:00:00" //formato de data: DD-MM-YYYY , 
+   "description": "Insira a descrição aqui"
 }
 ```
 
@@ -207,9 +207,9 @@ Passar o id da vaquinha como parâmetro.<br>
 Template para enviar os dados:<br>
 ```
 {
-   title: "Insira o titulo aqui", 
-   goal_value: 500 //meta , 
-   description: "Insira a descrição aqui"
+   "title": "Insira o titulo aqui", 
+   "goal_value": 500 //meta da vaquinha, 
+   "description": "Insira a descrição aqui"
    //você pode alterar apenas um, apenas delete os outros campos e envie apenas os campos desejados.
 }
 ```
