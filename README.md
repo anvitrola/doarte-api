@@ -189,9 +189,7 @@ Passar o id da vaquinha como parâmetro.
         </sub>
       </a>
     </td>    
-  </tr>
 
-  <tr>
     <td align="center">
       <a href="https://github.com/RafaelVi">
         <img src="https://avatars3.githubusercontent.com/u/43658933" width="100px;" alt="Foto de perfil do Github"/><br>
@@ -200,9 +198,7 @@ Passar o id da vaquinha como parâmetro.
         </sub>
       </a>
     </td>    
-  </tr>
 
-  <tr>
     <td align="center">
       <a href="https://github.com/EliveltonSouzaDev">
         <img src="https://avatars.githubusercontent.com/u/67668057" width="100px;" alt="Foto de perfil do Github"/><br>
@@ -211,11 +207,7 @@ Passar o id da vaquinha como parâmetro.
         </sub>
       </a>
     </td>    
-  </tr>
-
-
-
-  <tr>
+        
     <td align="center">
       <a href="https://github.com/petersilvahs">
         <img src="https://avatars.githubusercontent.com/u/75394512" width="100px;" alt="Foto de perfil do Github"/><br>
