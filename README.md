@@ -63,10 +63,10 @@ O projeto foi desenvolvido utlizando as seguintes tecnologias:
 
 # Requerimentos para rodar aplicação localmente
 
-- [Git](https://git-scm.com/) installed
-- [Docker](https://www.docker.com/) installed
-- [Node](https://node.js.org/) installed
-- [Npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/) installed
+- [Git](https://git-scm.com/) instalado
+- [Docker](https://www.docker.com/) instalado
+- [Node](https://node.js.org/) instalado
+- [Npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/) instalado
 - Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 
